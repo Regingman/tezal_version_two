@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tezal_version_two/ui/screens/intro/intro_screen.dart';
 import 'package:tezal_version_two/ui/screens/main/main_screen.dart';
+import 'UI/widgets/splash_screen.dart';
 import 'app_config.dart';
+import 'data/repositories/repository.dart';
 
 class App extends StatelessWidget {
   @override

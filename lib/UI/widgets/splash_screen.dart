@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'app_bar.dart';
+import 'package:tezal_version_two/UI/widgets/app_bar.dart';
 
 class SplashScreen extends StatelessWidget {
   @override
