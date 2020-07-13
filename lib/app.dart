@@ -1,6 +1,7 @@
 import 'package:first_time_screen/first_time_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tezal_version_two/ui/screens/intro/intro_screen.dart';
 import 'package:tezal_version_two/ui/screens/main/main_screen.dart';
 import 'UI/widgets/splash_screen.dart';
@@ -11,6 +12,7 @@ import 'data/repositories/repository.dart';
 class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    clear();
     return RepositoryProvider(
       create: (context) => Repository(),
       child: MultiBlocProvider(
@@ -35,5 +37,10 @@ class App extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  clear() async {
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+    preferences.clear();
   }
 }

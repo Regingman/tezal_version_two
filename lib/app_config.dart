@@ -11,7 +11,7 @@ import 'ui/screens/login/login_screen.dart';
 
 ThemeData getTheme() {
   return ThemeData(
-    primaryColor: Color(0xff342b38),
+    primaryColor: Colors.orange,
     accentColor: Color(0xffff0000),
     scaffoldBackgroundColor: Color(0xff151721),
     textTheme: TextTheme(

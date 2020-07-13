@@ -30,7 +30,7 @@ class _IntroScreenState extends State<IntroScreen> {
 }
 
 final page = PageViewModel(
-  pageColor: Colors.black,
+  pageColor: Colors.orange,
   // iconImageAssetPath: 'assets/taxi-driver.png',
   iconColor: Colors.blue,
   bubbleBackgroundColor: Colors.red,
@@ -48,7 +48,7 @@ final page = PageViewModel(
 );
 
 final page2 = PageViewModel(
-  pageColor: Colors.black,
+  pageColor: Colors.orange,
   // iconImageAssetPath: 'assets/taxi-driver.png',
   iconColor: Colors.blue,
   bubbleBackgroundColor: Colors.red,
@@ -66,7 +66,7 @@ final page2 = PageViewModel(
 );
 
 final page3 = PageViewModel(
-  pageColor: Colors.black,
+  pageColor: Colors.orange,
   // iconImageAssetPath: 'assets/taxi-driver.png',
   iconColor: Colors.blue,
   bubbleBackgroundColor: Colors.red,
@@ -75,7 +75,7 @@ final page3 = PageViewModel(
   ),
   title: Text('Приветствие'),
   mainImage: Image.asset(
-    'assets/intro_3.png',
+    'assets/intro_3.jpg',
     height: 300.0,
     width: 300.0,
     alignment: Alignment.center,
