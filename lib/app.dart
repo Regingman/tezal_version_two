@@ -1,18 +1,9 @@
 import 'package:first_time_screen/first_time_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:turna_tv/blocs/movie_detail_bloc/movie_detail_bloc.dart';
-
+import 'package:tezal_version_two/ui/screens/intro/intro_screen.dart';
+import 'package:tezal_version_two/ui/screens/main/main_screen.dart';
 import 'app_config.dart';
-import 'blocs/auth_bloc/auth_bloc.dart';
-import 'blocs/category_bloc/category_bloc.dart';
-import 'blocs/home_bloc/home_bloc.dart';
-import 'blocs/registration_bloc/registration_bloc.dart';
-import 'blocs/search_bloc/search_bloc.dart';
-import 'data/repositories/repository.dart';
-import 'ui/screens/intro/intro_screen.dart';
-import 'ui/screens/main/main_screen.dart';
-import 'ui/widgets/splash_screen.dart';
 
 class App extends StatelessWidget {
   @override
