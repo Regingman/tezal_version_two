@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 
 class MainScreen extends StatefulWidget {
-  static String route = "intro_screen";
+  static String route = "main_screen";
   @override
   _MainScreen createState() => _MainScreen();
 }

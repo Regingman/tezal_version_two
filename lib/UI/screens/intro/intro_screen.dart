@@ -35,11 +35,11 @@ final page = PageViewModel(
   iconColor: Colors.blue,
   bubbleBackgroundColor: Colors.red,
   body: Text(
-    'Смотри новинки из мира кино одним из первых!',
+    'Начните свой путь к закупке товаров в онлайне!',
   ),
-  title: Text('Новинки кино'),
+  title: Text('Закупка товаров'),
   mainImage: Image.asset(
-    'assets/intro1.png',
+    'assets/intro_1.png',
     height: 285.0,
     width: 285.0,
     alignment: Alignment.center,
@@ -53,11 +53,11 @@ final page2 = PageViewModel(
   iconColor: Colors.blue,
   bubbleBackgroundColor: Colors.red,
   body: Text(
-    'Самые популярные сериалы в хорошем качестве!',
+    'Вместе с нами и нашими партнерами мы предоставляем лучшую в Кыргызстане платформу!',
   ),
-  title: Text('Сериалы'),
+  title: Text('Кыргызстан'),
   mainImage: Image.asset(
-    'assets/intro2.png',
+    'assets/intro_2.png',
     height: 285.0,
     width: 285.0,
     alignment: Alignment.center,
@@ -71,11 +71,11 @@ final page3 = PageViewModel(
   iconColor: Colors.blue,
   bubbleBackgroundColor: Colors.red,
   body: Text(
-    'Будь в курсе последних событий спорта!',
+    'Мы всегда тебе рады и ждем тебя! И пусть этот день будет незабываем!',
   ),
-  title: Text('Спорт'),
+  title: Text('Приветствие'),
   mainImage: Image.asset(
-    'assets/intro3.png',
+    'assets/intro_3.png',
     height: 300.0,
     width: 300.0,
     alignment: Alignment.center,

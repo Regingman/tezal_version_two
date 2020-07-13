@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:tezal_version_two/UI/screens/registration/registration_screen.dart';
 import 'package:tezal_version_two/ui/screens/main/main_screen.dart';
 
+import 'UI/screens/registration/registration_screen.dart';
 import 'ui/screens/intro/intro_screen.dart';
-import 'ui/screens/registration/registration_screen.dart';
 import 'ui/screens/login/login_screen.dart';
 
 // #51597e

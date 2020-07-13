@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 
 class LoginScreen extends StatefulWidget {
-  static String route = "intro_screen";
+  static String route = "login_scree ";
   @override
   _LoginScreen createState() => _LoginScreen();
 }

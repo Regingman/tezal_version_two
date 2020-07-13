@@ -1,4 +1,6 @@
 # This is a generated file; do not edit or check into version control.
+device_info=E:\\game\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\device_info-0.4.2+4\\
+get_ip=E:\\game\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\get_ip-0.4.0\\
 google_sign_in=E:\\game\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\google_sign_in-4.5.1\\
 google_sign_in_web=E:\\game\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\google_sign_in_web-0.9.1+1\\
 path_provider_linux=E:\\game\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\path_provider_linux-0.0.1+2\\
@@ -6,3 +8,4 @@ shared_preferences=E:\\game\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\shar
 shared_preferences_linux=E:\\game\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\shared_preferences_linux-0.0.2+1\\
 shared_preferences_macos=E:\\game\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\shared_preferences_macos-0.0.1+10\\
 shared_preferences_web=E:\\game\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\shared_preferences_web-0.1.2+7\\
+webview_flutter=E:\\game\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\webview_flutter-0.3.22+1\\

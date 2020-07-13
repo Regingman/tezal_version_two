@@ -5,6 +5,7 @@ import 'package:tezal_version_two/ui/screens/intro/intro_screen.dart';
 import 'package:tezal_version_two/ui/screens/main/main_screen.dart';
 import 'UI/widgets/splash_screen.dart';
 import 'app_config.dart';
+import 'blocs/registration_bloc/registration_bloc.dart';
 import 'data/repositories/repository.dart';
 
 class App extends StatelessWidget {
@@ -13,7 +14,12 @@ class App extends StatelessWidget {
     return RepositoryProvider(
       create: (context) => Repository(),
       child: MultiBlocProvider(
-        providers: [],
+        providers: [
+          BlocProvider(
+            create: (context) =>
+                RegistrationBloc(context.repository<Repository>()),
+          ),
+        ],
         child: MaterialApp(
           theme: getTheme(),
           home: FirstTimeScreen(

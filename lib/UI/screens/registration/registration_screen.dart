@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 
+enum RegistrationType { phone, email, google, facebook }
+
 class RegistrationScreen extends StatefulWidget {
-  static String route = "intro_screen";
+  static String route = "registration_screen";
   @override
   _RegistrationScreen createState() => _RegistrationScreen();
 }
