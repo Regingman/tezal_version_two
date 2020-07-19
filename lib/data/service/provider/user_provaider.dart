@@ -2,53 +2,26 @@ import 'dart:convert' as convert;
 
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:http/http.dart' as http;
-import 'package:http/http.dart';
 import 'package:tezal_version_two/UI/screens/registration/registration_screen.dart';
 import 'package:tezal_version_two/data/models/user.dart';
 
 import '../api_service.dart';
-import '../device_info_service.dart';
 
 class UserProvider {
   // login
-  Future<User> getUserByEmail(String email, String password) async {
+  Future<User> getUserID(String username, String password) async {
     var response = await http.post(
-      ApiService.userByEmail,
+      ApiService.login,
       body: {
-        "email": email,
+        "username": username,
         "password": password,
-        "ip": await getIP(),
-        "device": await getModel(),
-        "platform": getPlatform(),
       },
     );
 
     print('object');
     var jsonResponse = convert.jsonDecode(response.body);
-    if (jsonResponse == 488) throw Exception([jsonResponse, email, password]);
-    if (jsonResponse == 401) throw Exception(jsonResponse);
-    User user = User.fromJson(jsonResponse['AUTHORIZATION'][0]);
-    return user;
-  }
-
-  Future<User> getUserByGoogle(GoogleSignInAccount account) async {
-    var response = await http.post(
-      ApiService.userByGoogle,
-      body: {
-        "email": account.email,
-        "token":
-            "f2c81624ceb87d693fd306c0251bc27fb86114401197829250cfb4f107b4ef73",
-        "ip": await getIP(),
-        "device": await getModel(),
-        "platform": getPlatform(),
-      },
-    );
-
-    print('object');
-    var jsonResponse = convert.jsonDecode(response.body);
-
-    print('object');
-    if (jsonResponse == 488) throw Exception([jsonResponse, account]);
+    if (jsonResponse == 488)
+      throw Exception([jsonResponse, username, password]);
     if (jsonResponse == 401) throw Exception(jsonResponse);
     User user = User.fromJson(jsonResponse['AUTHORIZATION'][0]);
     return user;
@@ -63,10 +36,12 @@ class UserProvider {
   }) async {
     switch (type) {
       case RegistrationType.email:
-        return await _registrateByEmail(login, password);
+        return await null;
+        //     _registrateByEmail(login, password);
         break;
       case RegistrationType.google:
-        return await _registrateByGoogle(account);
+        return await null;
+      // _registrateByGoogle(account);
 
       default:
         throw Exception('данная функция в разработке');
@@ -74,74 +49,4 @@ class UserProvider {
   }
   // registration back
 
-  Future<bool> _registrateByEmail(String login, String password) async {
-    Response response = await http.post(
-      ApiService.registrateByEmail,
-      body: {
-        "email": login,
-        "name": login,
-        "password": password,
-        "connpass": password,
-        "ip": await getIP(),
-      },
-    );
-    if (response.statusCode == 200) {
-      return true;
-    } else
-      throw Exception('не удалось , проверьте интернет соединение!');
-  }
-
-  Future<bool> _registrateByGoogle(GoogleSignInAccount account) async {
-    print('object');
-    Response response = await http.post(
-      ApiService.registrateByGoogle,
-      body: {
-        "name": account.displayName,
-        "email": account.email,
-        "password": account.id,
-        "image": account.photoUrl,
-        "ip": await getIP(),
-      },
-    );
-    print('object');
-    if (response.statusCode == 200) {
-      return true;
-    } else
-      response;
-    print('sac');
-
-    throw Exception('не удалось , проверьте интернет соединение!');
-  }
-
-  // other
-  Future<bool> addWatchLater(String token, int movieId) async {
-    Response response = await http.post(
-      ApiService.addWatchLater,
-      body: {
-        "token": token,
-        "movieId": movieId.toString(),
-      },
-    );
-
-    if (response.statusCode == 200)
-      return true;
-    else
-      return false;
-  }
-
-  Future<bool> removeWatchLater(String token, int movieId) async {
-    Response response = await http.post(
-      ApiService.removeWatchLater,
-      body: {
-        "userToken": token,
-        "movieId": movieId.toString(),
-      },
-    );
-    print('object');
-
-    if (response.statusCode == 200)
-      return true;
-    else
-      return false;
-  }
 }

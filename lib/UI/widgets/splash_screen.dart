@@ -11,7 +11,7 @@ class SplashScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             AppBarTitle(),
-            Text('кино начинается с тебя'),
+            Text('Все начинается с тебя!'),
           ],
         ),
       ),

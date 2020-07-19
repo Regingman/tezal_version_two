@@ -16,14 +16,15 @@ class Repository {
   }) async {
     print('object');
     if (type == RegistrationType.email)
-      await _registrateByEmail(login, password, type);
-    else if (type == RegistrationType.google)
-      await _registrateByGoogle(account, type);
+      await null;
+    //_registrateByEmail(login, password, type);
+    else if (type == RegistrationType.google) await null;
+    //_registrateByGoogle(account, type);
 
     return true;
   }
 
-  Future _registrateByGoogle(
+  /*Future _registrateByGoogle(
       GoogleSignInAccount account, RegistrationType type) async {
     print('object');
     await _userProvider.registrate(account: account, type: type);
@@ -35,16 +36,10 @@ class Repository {
     await _userProvider.registrate(
         login: login, password: password, type: type);
     await initUserByEmail(login, password);
-  }
+  }*/
 
-  Future<bool> initUserGoogle(GoogleSignInAccount account) async {
-    this.user = await _userProvider.getUserByGoogle(account);
-    await LocalUserService.setUser(this.user);
-    return true;
-  }
-
-  Future<bool> initUserByEmail(String email, String password) async {
-    this.user = await _userProvider.getUserByEmail(email, password);
+  Future<bool> initUser(String username, String password) async {
+    this.user = await _userProvider.getUserID(username, password);
     await LocalUserService.setUser(this.user);
     return true;
   }
