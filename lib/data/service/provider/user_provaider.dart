@@ -1,4 +1,4 @@
-import 'dart:convert' as convert;
+import 'dart:convert';
 
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:http/http.dart' as http;
@@ -10,19 +10,20 @@ import '../api_service.dart';
 class UserProvider {
   // login
   Future<User> getUserID(String username, String password) async {
+    Map data = {'username': username, 'password': password};
     var response = await http.post(
       ApiService.login,
-      body: {
-        "username": username,
-        "password": password,
-      },
+      headers: {"Content-Type": "application/json"},
+      body: utf8.encode(json.encode(data)),
     );
 
-    print('object');
-    var jsonResponse = convert.jsonDecode(response.body);
+    print(response.statusCode);
+    var jsonResponse = jsonDecode(response.body);
     if (jsonResponse == 488)
       throw Exception([jsonResponse, username, password]);
     if (jsonResponse == 401) throw Exception(jsonResponse);
+    // сделать еще один запрос, с данными юзера или же возвращать их сразу на сервере
+
     User user = User.fromJson(jsonResponse['AUTHORIZATION'][0]);
     return user;
   }

@@ -14,10 +14,7 @@ class LocalUserService {
     try {
       var userString = prefs.getString('user');
       var userJson = json.decode(userString);
-
-      print('object');
       User user = User.fromJson(userJson);
-
       return user;
     } catch (e) {
       return null;
@@ -27,5 +24,20 @@ class LocalUserService {
   static Future<bool> deleteUser() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     return prefs.remove('user');
+  }
+
+  static Future<bool> setToken(String token) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    return prefs.setString('token', token);
+  }
+
+  static Future<String> getToken() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    return prefs.getString('token');
+  }
+
+  static Future<bool> deleteToken() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    return prefs.remove('token');
   }
 }

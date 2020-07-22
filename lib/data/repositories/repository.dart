@@ -41,6 +41,7 @@ class Repository {
   Future<bool> initUser(String username, String password) async {
     this.user = await _userProvider.getUserID(username, password);
     await LocalUserService.setUser(this.user);
+    await LocalUserService.setToken(this.user.token);
     return true;
   }
 }

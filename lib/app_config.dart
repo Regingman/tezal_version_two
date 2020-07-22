@@ -12,8 +12,8 @@ import 'ui/screens/login/login_screen.dart';
 ThemeData getTheme() {
   return ThemeData(
     primaryColor: Colors.orange,
-    accentColor: Color(0xffff0000),
-    scaffoldBackgroundColor: Color(0xff151721),
+    accentColor: Colors.orange,
+    scaffoldBackgroundColor: Colors.white,
     textTheme: TextTheme(
       bodyText1: TextStyle(
         color: Colors.white.withOpacity(0.7),
@@ -28,9 +28,9 @@ ThemeData getTheme() {
       color: Colors.white.withOpacity(0.8),
     ),
     inputDecorationTheme: InputDecorationTheme(
-      fillColor: Colors.white,
+      fillColor: Colors.black,
       labelStyle: TextStyle(
-        color: Colors.white,
+        color: Colors.black,
       ),
     ),
   );

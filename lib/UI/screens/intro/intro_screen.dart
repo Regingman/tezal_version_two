@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intro_views_flutter/Models/page_view_model.dart';
 import 'package:intro_views_flutter/intro_views_flutter.dart';
-import 'package:tezal_version_two/ui/screens/main/main_screen.dart';
+import 'package:tezal_version_two/UI/screens/login/login_screen.dart';
 
 class IntroScreen extends StatefulWidget {
   static String route = "intro_screen";
@@ -15,7 +15,7 @@ class _IntroScreenState extends State<IntroScreen> {
     return IntroViewsFlutter(
       [page, page2, page3],
       onTapDoneButton: () =>
-          Navigator.of(context).pushReplacementNamed(MainScreen.route),
+          Navigator.of(context).pushReplacementNamed(LoginScreen.route),
       showSkipButton: true,
       skipText:
           Text('ПРОПУСТИТЬ', style: TextStyle(fontWeight: FontWeight.bold)),
