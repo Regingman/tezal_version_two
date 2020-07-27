@@ -4,17 +4,15 @@ class Container {
   int id;
   String name;
   int number;
-  Budget budget;
+  int budgetId;
+  int containerCategoryId;
 
   Container.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     name = json['name'];
     number = json['number'];
-    if (json['budget'] != null) {
-      json['budget'].forEach((v) {
-        budget = Budget.fromJson(v);
-      });
-    }
+    budgetId = json['budgetId'];
+    containerCategoryId = json['containerCategoryId'];
   }
 
   Map<String, dynamic> toJson() {
@@ -22,9 +20,10 @@ class Container {
     data['id'] = this.id;
     data['name'] = this.name;
     data['number'] = this.number;
-    data['budget'] = this.budget;
+    data['budgetId'] = this.budgetId;
+    data['containerCategoryId'] = this.containerCategoryId;
     return data;
   }
 
-  Container(this.budget, this.id, this.name, this.number);
+  Container(this.budgetId, this.id, this.name, this.number);
 }

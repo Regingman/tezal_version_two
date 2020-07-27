@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:io';
 import 'package:bloc/bloc.dart';
 
 import 'package:meta/meta.dart';
@@ -41,10 +42,15 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       await _repository.initUser(event.username, event.password);
       yield AuthLogedIn(user: _repository.user);
     } catch (e) {
-      if (e.message == 401)
+      String message;
+      if (e is SocketException)
+        message = "Проверьте интернет соединение и попробуйте снова";
+
+      /*if (e.message == 401)
         yield AuthError(message: 'Не правильный логин или пароль');
-      else
-        yield AuthError(message: 'Что то пошло не так.. попробуйте снова..');
+      else*/
+      message = e.toString();
+      yield AuthError(message: message);
     }
   }
 

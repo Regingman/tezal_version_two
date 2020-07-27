@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tezal_version_two/ui/screens/main/main_screen.dart';
+import 'package:tezal_version_two/UI/screens/home/home_screen.dart';
 
 import 'UI/screens/registration/registration_screen.dart';
 import 'ui/screens/intro/intro_screen.dart';
@@ -37,7 +37,7 @@ ThemeData getTheme() {
 }
 
 Map<String, WidgetBuilder> getRoutes() => <String, WidgetBuilder>{
-      MainScreen.route: (context) => MainScreen(),
+      HomeScreen.route: (context) => HomeScreen(),
       LoginScreen.route: (context) => LoginScreen(),
       RegistrationScreen.route: (context) => RegistrationScreen(),
       IntroScreen.route: (context) => IntroScreen(),

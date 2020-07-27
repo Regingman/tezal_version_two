@@ -25,19 +25,4 @@ class LocalUserService {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     return prefs.remove('user');
   }
-
-  static Future<bool> setToken(String token) async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    return prefs.setString('token', token);
-  }
-
-  static Future<String> getToken() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    return prefs.getString('token');
-  }
-
-  static Future<bool> deleteToken() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    return prefs.remove('token');
-  }
 }

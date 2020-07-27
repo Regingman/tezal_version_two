@@ -14,6 +14,7 @@ class User {
   User.fromJson(Map<String, dynamic> json) {
     userName = json['username'];
     phone = json['telephone'];
+    token = json['token'];
   }
 
   Map<String, dynamic> toJson() {

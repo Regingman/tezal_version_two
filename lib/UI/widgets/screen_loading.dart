@@ -5,6 +5,7 @@ import 'app_bar.dart';
 class ScreenLoading extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    print("circular");
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 50.0),
       child: Column(

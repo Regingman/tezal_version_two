@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tezal_version_two/UI/screens/login/login_screen.dart';
 import 'package:tezal_version_two/blocs/auth_bloc/auth_bloc.dart';
+import 'package:tezal_version_two/blocs/home_bloc/home_bloc.dart';
 import 'package:tezal_version_two/ui/screens/intro/intro_screen.dart';
 import 'UI/widgets/splash_screen.dart';
 import 'app_config.dart';
@@ -24,6 +25,9 @@ class App extends StatelessWidget {
           ),
           BlocProvider(
             create: (context) => AuthBloc(context.repository<Repository>()),
+          ),
+          BlocProvider(
+            create: (context) => HomeBloc(context.repository<Repository>()),
           ),
         ],
         child: MaterialApp(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:tezal_version_two/UI/screens/home/home_screen.dart';
 import 'package:tezal_version_two/UI/widgets/my_flat_button.dart';
 import 'package:tezal_version_two/UI/widgets/screen_loading.dart';
 import 'package:tezal_version_two/UI/widgets/show_error.dart';
@@ -32,7 +33,6 @@ class _LoginScreenState extends State<LoginScreen> {
         child: BlocBuilder<AuthBloc, AuthState>(
           builder: (context, state) {
             if (state is AuthLoading) return ScreenLoading();
-
             return _buildDefault();
           },
         ),
@@ -41,7 +41,8 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   void _listenLogedIn(BuildContext context) {
-    Navigator.of(context).pop();
+    print('listenLogedIn');
+    Navigator.of(context).pushReplacementNamed(HomeScreen.route);
   }
 
   Widget _buildDefault() {
@@ -60,6 +61,8 @@ class _LoginScreenState extends State<LoginScreen> {
               controller: _usernameController,
               decoration: InputDecoration(
                 labelText: "через телефон",
+                labelStyle: TextStyle(color: Colors.black),
+                border: OutlineInputBorder(),
               ),
             ),
             SizedBox(height: 20.0),
@@ -68,6 +71,8 @@ class _LoginScreenState extends State<LoginScreen> {
               obscureText: true,
               decoration: InputDecoration(
                 labelText: "пароль",
+                labelStyle: TextStyle(color: Colors.black),
+                border: OutlineInputBorder(),
               ),
             ),
             SizedBox(height: 20.0),
@@ -85,6 +90,6 @@ class _LoginScreenState extends State<LoginScreen> {
     String username = _usernameController.text;
     String password = _passwordController.text;
     context.bloc<AuthBloc>().add(Login(username: username, password: password));
-    Navigator.of(context).pushReplacementNamed(LoginScreen.route);
+    //Navigator.of(context).pushReplacementNamed(HomeScreen.route);
   }
 }

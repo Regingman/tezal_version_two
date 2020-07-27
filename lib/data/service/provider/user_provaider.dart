@@ -17,14 +17,22 @@ class UserProvider {
       body: utf8.encode(json.encode(data)),
     );
 
-    print(response.statusCode);
+    print("user: " + response.statusCode.toString());
     var jsonResponse = jsonDecode(response.body);
     if (jsonResponse == 488)
       throw Exception([jsonResponse, username, password]);
     if (jsonResponse == 401) throw Exception(jsonResponse);
     // сделать еще один запрос, с данными юзера или же возвращать их сразу на сервере
-
-    User user = User.fromJson(jsonResponse['AUTHORIZATION'][0]);
+    User user = User.fromJson(jsonResponse);
+    if (user.name == null) {
+      user.name = "";
+    }
+    if (user.userName == null) {
+      user.userName = "";
+    }
+    if (user.phone == null) {
+      user.phone = "";
+    }
     return user;
   }
 
