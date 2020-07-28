@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tezal_version_two/UI/screens/login/login_screen.dart';
+import 'package:tezal_version_two/UI/widgets/layout.dart';
 import 'package:tezal_version_two/blocs/auth_bloc/auth_bloc.dart';
 import 'package:tezal_version_two/blocs/home_bloc/home_bloc.dart';
-import 'package:tezal_version_two/ui/screens/intro/intro_screen.dart';
 import 'UI/widgets/splash_screen.dart';
 import 'app_config.dart';
 import 'blocs/registration_bloc/registration_bloc.dart';
@@ -35,7 +35,7 @@ class App extends StatelessWidget {
           home: FirstTimeScreen(
             loadingScreen: SplashScreen(),
             introScreen: MaterialPageRoute(
-              builder: (context) => IntroScreen(),
+              builder: (context) => Landing(),
             ),
             landingScreen: MaterialPageRoute(
               builder: (context) => LoginScreen(),

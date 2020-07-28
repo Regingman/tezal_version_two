@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:tezal_version_two/UI/widgets/custom_progress_indicator.dart';
+import 'package:tezal_version_two/UI/widgets/custom_progress_indicator2.dart';
 
 import 'app_bar.dart';
 
@@ -15,7 +17,10 @@ class ScreenLoading extends StatelessWidget {
           SizedBox(width: MediaQuery.of(context).size.width),
           AppBarTitle(),
           SizedBox(height: 18.0),
-          CircularProgressIndicator(),
+          CustomProgressIndicator2(
+            dotRadius: 10,
+            radius: 45,
+          ),
         ],
       ),
     );

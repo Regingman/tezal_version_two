@@ -16,16 +16,16 @@ ThemeData getTheme() {
     scaffoldBackgroundColor: Colors.white,
     textTheme: TextTheme(
       bodyText1: TextStyle(
-        color: Colors.white.withOpacity(0.7),
+        color: Colors.black,
       ),
       bodyText2: TextStyle(
-        color: Colors.white.withOpacity(0.8),
+        color: Colors.black,
         fontSize: 18,
         fontWeight: FontWeight.bold,
       ),
     ),
     iconTheme: IconThemeData(
-      color: Colors.white.withOpacity(0.8),
+      color: Colors.black,
     ),
     inputDecorationTheme: InputDecorationTheme(
       fillColor: Colors.black,
