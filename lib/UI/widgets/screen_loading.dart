@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tezal_version_two/UI/widgets/custom_progress_indicator.dart';
 import 'package:tezal_version_two/UI/widgets/custom_progress_indicator2.dart';
 
 import 'app_bar.dart';

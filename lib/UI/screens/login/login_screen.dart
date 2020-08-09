@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tezal_version_two/UI/animations/fade_animation.dart';
 import 'package:tezal_version_two/UI/screens/home/home_screen.dart';
-import 'package:tezal_version_two/UI/widgets/custom_progress_indicator.dart';
-import 'package:tezal_version_two/UI/widgets/custom_progress_indicator2.dart';
 import 'package:tezal_version_two/UI/widgets/my_flat_button.dart';
 import 'package:tezal_version_two/UI/widgets/screen_loading.dart';
 import 'package:tezal_version_two/UI/widgets/show_error.dart';
@@ -25,7 +23,7 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Вход или регистрация'),
+        title: Text('Вход'),
       ),
       body: BlocListener<AuthBloc, AuthState>(
         listener: (context, state) {
