@@ -6,4 +6,8 @@ class ApiService {
   static String registration = '$_base/none';
   //All Container Category
   static String containerCategory = "$_base/containerCategory";
+  //all rate
+  static String rate = "$_base/rate";
+  //all rawMaterial
+  static String rawMaterial = "$_base/rawMaterial";
 }

@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 class Sale {
   int id;
   int count;
